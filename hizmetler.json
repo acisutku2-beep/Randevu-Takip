@@ -1,3 +1,4 @@
+
 {
     "hizmetler": {
         "Masaj": 600,
@@ -5,7 +6,7 @@
         "Sauna": 300,
         "Fitness": 250,
         "Yuzme": 200,
-        "plates": 500.0
+        "Pilates": 500
     },
     "maliyetler": {
         "Masaj": 250,
@@ -13,6 +14,6 @@
         "Sauna": 100,
         "Fitness": 80,
         "Yuzme": 60,
-        "plates": 250.0
+        "Pilates": 120
     }
 }

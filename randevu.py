@@ -20,3 +20,13 @@ class HizmetRandevusu(Randevu):
         print("Hizmet:", self.hizmet)
         print("Ücret:", self.ucret, "TL")
         print("Durum:", self.durum)
+
+    def bilgileri_sozluk_olarak(self):
+        return {
+            "musteri_adi": self.musteri_adi,
+            "tarih": self.tarih,
+            "saat": self.saat,
+            "hizmet": self.hizmet,
+            "ucret": self.ucret,
+            "durum": self.durum
+        }

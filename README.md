@@ -51,3 +51,9 @@ py main.py
 **Utku Açış**
 
 Bilgisayar Programcılığı
+
+## Örnek Veriler
+
+Programın test edilmesi için JSON dosyasında 20 adet örnek randevu kaydı bulunmaktadır. Bu kayıtlar üzerinden randevu arama, iptal etme, tamamlama ve gelir hesaplama işlemleri denenebilir.
+
+Programı çalıştırdığımda eklediğim yeni randevular ve hizmetler ilgili JSON dosyalarına kaydedilir.

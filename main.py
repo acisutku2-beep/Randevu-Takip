@@ -1,3 +1,4 @@
+
 import json
 import numpy as np
 import pandas as pd
@@ -26,9 +27,20 @@ def hizmetleri_yukle():
     try:
         with open("hizmetler.json", "r", encoding="utf-8") as dosya:
             veriler = json.load(dosya)
-            return veriler["hizmetler"], veriler["maliyetler"]
 
-    except (FileNotFoundError, json.JSONDecodeError, KeyError):
+            if not isinstance(veriler, dict):
+                raise ValueError("Hizmet dosyasi hatali.")
+
+            hizmetler = veriler["hizmetler"]
+            maliyetler = veriler["maliyetler"]
+
+            if not isinstance(hizmetler, dict) or not isinstance(maliyetler, dict):
+                raise ValueError("Hizmet bilgileri hatali.")
+
+            return hizmetler, maliyetler
+
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, TypeError, ValueError):
+        print("Hizmet dosyasi okunamadi. Varsayilan hizmetler yukleniyor.")
         hizmetleri_kaydet(varsayilan_hizmetler, varsayilan_maliyetler)
         return varsayilan_hizmetler.copy(), varsayilan_maliyetler.copy()
 
@@ -371,4 +383,4 @@ def menu():
 
 
 if __name__ == "__main__":
-    menu()  
+    menu()
